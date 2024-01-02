@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp -p mangodb_service /etc/yum.repos.d/mongo.repo 
+cp -p /tmp/roboshop_scripting/mangodb_service /etc/yum.repos.d/mongo.repo 
 
 ID=$(id -u)
 
