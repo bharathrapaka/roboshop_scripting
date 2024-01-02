@@ -29,16 +29,16 @@ cp -p /tmp/roboshop_scripting/mongodb_service /etc/yum.repos.d/mongo.repo
 
 VALIDATE $? "copied repo"  
 
-dnf install mongodb-org -y &>>$LOG_FILE 
+dnf install mongodb-org -y 
 
 VALIDATE $? "installation is" 
 
-systemctl enable mongod &>>$LOG_FILE 
+systemctl enable mongod 
 
-systemctl start mongod &>>$LOG_FILE 
+systemctl start mongod 
 
 sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf 
 
-cat /etc/mongod.conf &>>$LOG_FILE 
+cat /etc/mongod.conf 
 
-systemctl restart mongod &>>$LOG_FILE 
+systemctl restart mongod 
