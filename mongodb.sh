@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TIMESTAMP=$(date+F-%H-%M-%S)
+TIMESTAMP=$(date +%F-%H-%M-%S)
 LOG_FILE=/tmp/$TIMESTAMP.$0.log
 
 
