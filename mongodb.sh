@@ -32,3 +32,13 @@ VALIDATE $? "copied repo"
 dnf install mongodb-org -y &>>$LOG_FILE 
 
 VALIDATE $? "installation is" 
+
+systemctl enable mongod &>>$LOG_FILE 
+
+systemctl start mongod &>>$LOG_FILE 
+
+sed -i 's/127.0.0.1/0.0.0.0/g' /etc/mongod.conf 
+
+cat /etc/mongod.conf &>>$LOG_FILE 
+
+systemctl restart mongod &>>$LOG_FILE 
