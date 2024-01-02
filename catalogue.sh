@@ -42,7 +42,7 @@ mkdir /app &>>$LOG_FILE
 VALIDATE $? "created /app"
 
 curl -o /tmp/catalogue.zip https://roboshop-builds.s3.amazonaws.com/catalogue.zip &>>$LOG_FILE
-unzip /tmp/catalogue.zip 
+unzip -o /tmp/catalogue.zip 
 
 VALIDATE $? "unzip is"
 
