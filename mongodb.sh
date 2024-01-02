@@ -27,7 +27,8 @@ echo "you are root user"
 fi
 cp -p /tmp/roboshop_scripting/mongodb_service /etc/yum.repos.d/mongo.repo 
 
-VAILDATE $? "copied repo"  
+VALIDATE $? "copied repo"  
+
 dnf install mongodb-org -y &>>$LOG_FILE
 
 VALIDATE $? "installation is" 
