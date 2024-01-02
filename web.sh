@@ -42,7 +42,8 @@ VALIDATE $? "downloading webzip"
 cd /usr/share/nginx/html
 unzip /tmp/web.zip
 VALIDATE $? "unzip is"
-cp -pr robo2_repo /etc/nginx/default.d/roboshop.conf  &>> $LOG_FILE
+cp /c/Users/brapaka/roboshop_scripting/robo2_repo /etc/nginx/default.d/roboshop.conf  &>> $LOG_FILE
 VALIDATE $? "copying is"
 systemctl restart nginx &>> $LOG_FILE
 VALIDATE $? "restarting ngnix is"
+C:\Users\brapaka\roboshop_scripting\robo2_repo
