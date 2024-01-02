@@ -29,6 +29,6 @@ cp -p /tmp/roboshop_scripting/mongodb_service /etc/yum.repos.d/mongo.repo
 
 VALIDATE $? "copied repo"  
 
-dnf install mongodb-org -y &>>$LOG_FILE
+dnf install mongodb-org -y &>>$LOG_FILE 
 
 VALIDATE $? "installation is" 
