@@ -26,6 +26,6 @@ else
 echo "you are root user"
 fi
 
-dnf install mongodb-org -y &>>LOG_FILE
+dnf install mongodb-org -y &>>$LOG_FILE
 
 VALIDATE $? "installation is" 
