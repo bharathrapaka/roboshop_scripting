@@ -68,7 +68,7 @@ VALIDATE $? "copied successful"
 dnf install mongodb-org-shell -y &>>$LOG_FILE
 VALIDATE $? "installation is"
 
-mongo --host $mongohostIP </app/schema/catalogue.js &>>$LOG_FILE
+mongo --host $mongohostIP </app/schema/catalogue.js
 
 
 
