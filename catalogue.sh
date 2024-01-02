@@ -47,7 +47,7 @@ unzip /tmp/catalogue.zip &>>$LOG_FILE
 VALIDATE $? "unzip is"
 
 cd /app &>>$LOG_FILE
-VALIDATE $? "in /app directory $pwd1"
+VALIDATE $? "in /app directory $pwd1" 
 
 npm install  &>>$LOG_FILE
 VALIDATE $? "dependencies installation"
