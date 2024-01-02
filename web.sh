@@ -25,24 +25,24 @@ echo "you are root user"
 fi
 
 
-dnf install nginx -y
+dnf install nginx -y &>> $LOG_FILE
 VALIDATE $? "installation of nginx"
 
-systemctl enable nginx
+systemctl enable nginx &>> $LOG_FILE
 VALIDATE $? "enabling nginx"
 
-systemctl start nginx
+systemctl start nginx &>> $LOG_FILE
 VALIDATE $? "starting nginx"
 
 rm -rf /usr/share/nginx/html/*
 
-curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip
+curl -o /tmp/web.zip https://roboshop-builds.s3.amazonaws.com/web.zip 
 VALIDATE $? "downloading webzip"
 
 cd /usr/share/nginx/html
 unzip /tmp/web.zip
 VALIDATE $? "unzip is"
-cp -pr robo2.conf  /etc/nginx/default.d/roboshop.conf
+cp -pr robo2.conf  /etc/nginx/default.d/ &>> $LOG_FILE
 VALIDATE $? "copying is"
-systemctl restart nginx 
+systemctl restart nginx &>> $LOG_FILE
 VALIDATE $? "restarting ngnix is"
