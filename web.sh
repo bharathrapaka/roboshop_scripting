@@ -42,7 +42,7 @@ VALIDATE $? "downloading webzip"
 cd /usr/share/nginx/html
 unzip /tmp/web.zip
 VALIDATE $? "unzip is"
-cp -pr robo2.conf  /etc/nginx/default.d/ &>> $LOG_FILE
+cp -pr robo2_repo /etc/nginx/default.d/roboshop.conf  &>> $LOG_FILE
 VALIDATE $? "copying is"
 systemctl restart nginx &>> $LOG_FILE
 VALIDATE $? "restarting ngnix is"
