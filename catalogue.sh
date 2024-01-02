@@ -49,8 +49,13 @@ VALIDATE $? "unzip is"
 cd /app &>>$LOG_FILE
 VALIDATE $? "in /app directory" 
 
+npm init
 npm install  &>>$LOG_FILE
 VALIDATE $? "dependencies installation"
+npm config list
+npm cache clean --force
+
+
 
 cp -pr /tmp/roboshop_scripting/catalogue_service /etc/systemd/system/catalogue.service &>>$LOG_FILE
 VALIDATE $? "copied successful"
